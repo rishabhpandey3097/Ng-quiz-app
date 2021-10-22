@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <button routerLink='/' mat-icon-button class="example-icon">
+    Angular Quiz
+  </button>
+  <span class="example-spacer"></span>
+  <button *ngIf="auth.user$ | async as user" mat-button [matMenuTriggerFor]="menu"> {{user.displayName}}</button>
+  <mat-menu #menu="matMenu">
+    <button *ngIf="auth.user$ | async" (click)="auth.signOut()" mat-menu-item>Logout</button>
+  </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>
+<notifier-container></notifier-container>

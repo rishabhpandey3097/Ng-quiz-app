@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mt-5">
+    <h1 class="text-center">
+      Quiz
+    </h1>
+    <div class="col-sm-12 col-md-4 col-lg-6 mx-auto">
+      <mat-card >
+        <div>
+          <p>
+            {{currentQuestion.question}}
+          </p>
+          <mat-selection-list [multiple]="false" #options>
+            <mat-list-option #optionValue (click)="evaluateAnswer(currentQuestion.question, option)"
+              *ngFor='let option of currentQuestion.options; let i = index'>
+              <p>{{option}}</p>
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

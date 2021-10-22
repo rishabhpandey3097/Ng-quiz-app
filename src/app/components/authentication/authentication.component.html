@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 mx-auto">
+      <mat-tab-group #authTabs [(selectedIndex)]="authTabsIndex">
+        <mat-tab label="Login">
+          <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-form-field class="example-full-width" appearance="legacy">
+              <mat-label>Email</mat-label>
+              <input autocomplete="off" matInput  formControlName="email" required placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="legacy">
+              <mat-label>Password</mat-label>
+              <input autocomplete="off" matInput  formControlName="password" required type="password">
+            </mat-form-field>
+
+            <button [disabled]="loginForm.invalid" class="w-100" mat-raised-button color="primary">Login</button>
+          </form>
+
+        </mat-tab>
+        <mat-tab label="Register">
+          <form class="example-form" [formGroup]="registerForm" (ngSubmit)="register()">
+            <mat-form-field class="example-full-width" appearance="legacy">
+              <mat-label>Name</mat-label>
+              <input autocomplete="off" matInput  formControlName="name" required placeholder="Name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="legacy">
+              <mat-label>Email</mat-label>
+              <input autocomplete="off" matInput  formControlName="email" required placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="legacy">
+              <mat-label>Password</mat-label>
+              <input autocomplete="off" matInput  formControlName="password" required type="password">
+            </mat-form-field>
+
+            <button [disabled]="registerForm.invalid" class="w-100" mat-raised-button color="primary">Register</button>
+
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

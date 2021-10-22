@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-6 col-lg-4 mx-auto">
+           <mat-card class="text-center">
+               <h1>Quiz Completed</h1>
+               <p>You have scored <strong>{{totalMarks}}</strong> marks.</p>
+           </mat-card>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-6 col-lg-4 mx-auto">
+           <mat-card class="text-center">
+               <h1>Leaderboard</h1>
+               <mat-selection-list [multiple]='false'>
+                <mat-list-option *ngFor="let record of leaderboardRecords">
+                    {{record.userName}} - Total Marks : {{record.totalMarks}}
+                </mat-list-option>
+              </mat-selection-list>
+              
+           </mat-card>
+        </div>
+    </div>
+    <br>
+    <p class="text-center">
+        <button routerLink="/quiz" mat-raised-button color="primary">
+            Retry
+            <mat-icon>restart_alt</mat-icon>
+        </button>
+    </p>
+</div>
