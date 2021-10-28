@@ -87,7 +87,7 @@ export class QuizComponent implements OnInit {
     }
 
     setTimeout(() => {
-      if (0 === this.questionsArray.length) {
+      if (this.questionsArray.length === 0) {
         this.endQuiz()
       } else {
         var index = Math.floor(Math.random() * this.questionsArray.length) + 0;
